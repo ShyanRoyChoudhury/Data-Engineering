@@ -25,3 +25,45 @@ insert into dimdate
 	from payment;
 	
 
+DROP TABLE IF EXISTS dimcustomer;
+CREATE TABLE dimcustomer
+    (
+      customer_key SERIAL PRIMARY KEY,
+      customer_id  smallint NOT NULL,
+      customer_first_name   varchar(45) NOT NULL,
+      customer_last_name    varchar(45) NOT NULL,
+      email        varchar(50),
+      address      varchar(50) NOT NULL,
+      address2     varchar(50),
+      district     varchar(20) NOT NULL,
+      city         varchar(50) NOT NULL,
+      country      varchar(50) NOT NULL,
+      postal_code  varchar(10),
+      phone        varchar(20) ,
+      create_date  timestamp NOT NULL,
+      start_date   date NOT NULL,
+      end_date     date NOT NULL
+    );
+
+insert into dimcustomer(customer_key, customer_id, customer_first_name, customer_last_name,
+						email, address, address2, district, city, country, postal_code, 
+					   create_date, start_date, end_date)
+					   select 
+					   c.customer_id as customer_key,
+					   c.customer_id,
+					   c.first_name,
+					   c.last_name,
+					   c.email,
+					   a.address,
+					   a.address2,
+					   a.district,
+					   ci.city,
+					   co.country,
+					   a.postal_code,
+					   c.create_date,
+					   now() as start_date,
+					   now() as end_date
+					   from customer c
+					   join address a on (c.address_id = a.address_id)
+					   join city ci on a.city_id = ci.city_id
+					   join country co on ci.country_id = co.country_id;
