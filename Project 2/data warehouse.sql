@@ -96,3 +96,41 @@ insert into dimfilm(film_key, film_id, title, description,
 			f.length
 			from film f left join language l
 			on f.language_id = l.language_id;
+
+DROP TABLE IF EXISTS dimstore;
+CREATE TABLE dimStore
+    (
+      store_key           SERIAL PRIMARY KEY,
+      store_id            smallint NOT NULL,
+      address             varchar(50) NOT NULL,
+      address2            varchar(50),
+      district            varchar(20) NOT NULL,
+      city                varchar(50) NOT NULL,
+      country             varchar(50) NOT NULL,
+      postal_code         varchar(10),
+      manager_first_name  varchar(45) NOT NULL,
+      manager_last_name   varchar(45) NOT NULL,
+      start_date          date NOT NULL,
+      end_date            date NOT NULL
+    );			
+insert into dimstore(store_key, store_id, address, address2,
+					 district, city,country, postal_code, manager_first_name,
+					manager_last_name, start_date, end_date)
+					SELECT
+					s.store_id as store_key,
+					s.store_id,
+					ad.address,
+					ad.address2,
+					ad.district,
+					ci.city,
+					co.country,
+					ad.postal_code,
+					st.first_name,
+					st.last_name,
+					now() as start_date,
+					now() as end_date
+					from store s 
+					join staff st on st.staff_id = s.manager_staff_id
+					join address ad on st.address_id = ad.address_id
+					join city ci on ci.city_id = ad.city_id
+					join country co on co.country_id = ci.country_id;
