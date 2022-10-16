@@ -67,3 +67,32 @@ insert into dimcustomer(customer_key, customer_id, customer_first_name, customer
 					   join address a on (c.address_id = a.address_id)
 					   join city ci on a.city_id = ci.city_id
 					   join country co on ci.country_id = co.country_id;
+					   
+					   
+					   
+DROP TABLE IF EXISTS dimfilm;
+CREATE TABLE dimfilm
+    (
+      movie_key          SERIAL PRIMARY KEY,
+      film_id            smallint NOT NULL,
+      title              varchar(255) NOT NULL,
+      description        text,
+      release_year       year,
+      ratings             varchar(5) NOT NULL,
+      language           varchar(20) NOT NULL,
+      length             smallint NOT NULL,
+    );
+    
+insert into dimfilm(film_key, film_id, title, description, 
+					release_year, ratings, language, length)
+			select 
+			f.film_id as film_key,
+			f.film_id,
+			f.title,
+			f.description,
+			f.release_year,
+			f.rating,
+			l.name,
+			f.length
+			from film f left join language l
+			on f.language_id = l.language_id;
