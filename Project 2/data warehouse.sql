@@ -134,3 +134,48 @@ insert into dimstore(store_key, store_id, address, address2,
 					join address ad on st.address_id = ad.address_id
 					join city ci on ci.city_id = ad.city_id
 					join country co on co.country_id = ci.country_id;
+					
+
+DROP TABLE IF EXISTS FACTSALES;
+CREATE TABLE FACTSALES(
+	sales_key serial primary key,
+	date_key integer references dimdate(date_key),
+	customer_key integer references dimcustomer(customer_key),
+	film_key integer references dimfilm(film_key),
+	store_key integer references dimstore(store_key),
+	sales_amount numeric);
+	
+INSERT INTO factsales(date_key, customer_key, film_key,
+					 store_key, sales_amount)
+	SELECT
+	TO_CHAR(payment_date :: date, 'yyyymmdd')::integer as date_key,
+	p.customer_id as customer_key,
+	i.film_id as film_key,
+	i.store_id as store_key,
+	p.amount as sales_amount
+	from payment p
+	join rental r on p.rental_id = r.rental_id
+	join inventory i on r.inventory_id = i.inventory_id;
+
+
+-- star schema
+SELECT dimfilm.title, dimDate.month, dimCustomer.city, sum(sales_amount) as revenue
+FROM factSales 
+JOIN dimFILM    on (dimfilm.film_key      = factSales.film_key)
+JOIN dimDate     on (dimDate.date_key         = factSales.date_key)
+JOIN dimCustomer on (dimCustomer.customer_key = factSales.customer_key)
+group by (dimfilm.title, dimDate.month, dimCustomer.city)
+order by dimfilm.title, dimDate.month, dimCustomer.city, revenue desc;
+
+-- 3nf model
+-- 3nf
+SELECT f.title, EXTRACT(month FROM p.payment_date) as month, ci.city, sum(p.amount) as revenue
+FROM payment p
+JOIN rental r    ON ( p.rental_id = r.rental_id )
+JOIN inventory i ON ( r.inventory_id = i.inventory_id )
+JOIN film f ON ( i.film_id = f.film_id)
+JOIN customer c  ON ( p.customer_id = c.customer_id )
+JOIN address a ON ( c.address_id = a.address_id )
+JOIN city ci ON ( a.city_id = ci.city_id )
+group by (f.title, month, ci.city)
+order by f.title, month, ci.city, revenue desc;
