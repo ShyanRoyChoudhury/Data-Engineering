@@ -1,4 +1,4 @@
-** In this project**, I have created a basic ETL pipeline using python in AWS. The technologies used in this projects are: 
+**In this project**, I have created a basic ETL pipeline using python in AWS. The technologies used in this projects are: 
 - Python
 - AWS S3
 - AWS Athena
