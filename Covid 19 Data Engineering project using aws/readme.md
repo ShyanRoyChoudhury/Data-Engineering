@@ -8,4 +8,5 @@
 
 
 The raw data are in csv, json format. Few of the datasets were corrupt so it required little bit of tweaking.
-:paperclip: Datesets used in Project: https://aws.amazon.com/blogs/big-data/exploring-the-public-aws-covid-19-data-lake/
+
+:paperclip: Datasets used in Project: https://aws.amazon.com/blogs/big-data/exploring-the-public-aws-covid-19-data-lake/
