@@ -3,6 +3,7 @@
 - AWS S3
 - AWS Athena
 - AWS Glue
+- AWS EC2
 - AWS Redshift
 
 
