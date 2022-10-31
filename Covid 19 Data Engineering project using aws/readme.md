@@ -1,4 +1,4 @@
-**In this project**, I have created a basic ETL pipeline using python in AWS. The raw data was initially uploaded to a S3 bucket. Then using crawler, the raw data was crawled and uploaded to Athena and then Quering. The queried data was then uploaded back to s3 bucket. Then a cluster was created in redshift to copy the data from s3 using aws glue. The technologies used in this project are: 
+**In this project**, I have created a basic ETL pipeline using python in AWS. The raw data was initially uploaded to a S3 bucket. Then using crawler, the raw data was crawled and uploaded to Athena and then queried. The queried data was then uploaded back to s3 bucket. Then a cluster was created in redshift to copy the data from s3 using aws glue. The technologies used in this project are: 
 - Python
 - AWS S3
 - AWS Athena
