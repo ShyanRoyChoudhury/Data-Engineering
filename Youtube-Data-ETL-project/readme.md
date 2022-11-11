@@ -35,7 +35,7 @@
 * GG. The data is now ready!!!!! 👍
  ## :jigsaw: Resouces:
 [Kaggle](https://www.kaggle.com/)
-[YouTube Data Analysis | END TO END DATA ENGINEERING PROJECT](https://www.youtube.com/playlist?list=PLBJe2dFI4sguF2nU6Z3Od7BX8eALZN3mU)
+[YOUTUBE DATA ANALYSIS - DATA ENGINEERING PROJECT](https://www.youtube.com/playlist?list=PLBJe2dFI4sguF2nU6Z3Od7BX8eALZN3mU)
 
 
 
