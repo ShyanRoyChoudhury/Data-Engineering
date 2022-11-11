@@ -13,7 +13,7 @@
 ## 🏗️:Project Architecture:
 > ETL architecture
 
-https://github.com/ShyanRoyChoudhury/Data-Engineering/blob/main/Youtube-Data-ETL-project/images/Data-Architecture.png
+Youtube-Data-ETL-project/images/Data-Architecture.png
 ## ☢️: Project Steps:
 
 
