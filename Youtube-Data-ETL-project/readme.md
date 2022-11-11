@@ -16,7 +16,12 @@
 ![Data-Architecture](https://user-images.githubusercontent.com/83347717/201344688-22dbe224-dce2-460d-b1da-5e20f27a3a65.png)
 
 ## ☢️: Project Steps:
-
+* Downloaded the datasets from kaggle.
+* Uploaded the data from my local machine to S3 using AWS CLI commands. Separated the data stored in different folders based on their extension(CSV and JSON).
+> s3_cli_command.sh
+* Used Crawler in AWS Glue Catalog to crawl the data from JSON and CSV files from the raw bucket and store them in separate database which then could be queried in Athena.
+* If problems arise as a result of data in JSON format, wrote a Python function using AWS Lambda to clean them up and convert them to parquet format.
+> lambda_function.py
 
  ## :jigsaw: Resouces:
 [Kaggle](https://www.kaggle.com/)
