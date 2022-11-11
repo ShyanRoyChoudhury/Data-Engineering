@@ -32,7 +32,7 @@
 
 ![ETL-Joining_Data](https://user-images.githubusercontent.com/83347717/201347694-fa0b8a3a-4ea5-4baf-b443-43d573beb289.png)
 
-* The data is now ready! 👍:
+* GG. The data is now ready!!!!! 👍
  ## :jigsaw: Resouces:
 [Kaggle](https://www.kaggle.com/)
 [YouTube Data Analysis | END TO END DATA ENGINEERING PROJECT](https://www.youtube.com/playlist?list=PLBJe2dFI4sguF2nU6Z3Od7BX8eALZN3mU)
