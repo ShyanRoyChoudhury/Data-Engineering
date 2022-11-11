@@ -38,5 +38,6 @@
 [YOUTUBE DATA ANALYSIS - DATA ENGINEERING PROJECT](https://www.youtube.com/playlist?list=PLBJe2dFI4sguF2nU6Z3Od7BX8eALZN3mU)
 
 
+### [QuickSight Dashboard](https://github.com/ShyanRoyChoudhury/Data-Engineering/blob/main/Youtube-Data-ETL-project/Youtube%20de%20dashboard.pdf)
 
 ### Give a 🌟 if you liked this project 
