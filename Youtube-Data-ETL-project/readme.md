@@ -18,7 +18,7 @@
 ## ☢️: Project Steps:
 * Downloaded the datasets from kaggle.
 * Uploaded the data from my local machine to S3 using AWS CLI commands. Separated the data stored in different folders based on their extension(CSV and JSON).
-> s3_cli_command.sh
+> [s3_cli_command.sh](https://github.com/ShyanRoyChoudhury/Data-Engineering/blob/83afa9cd1a3ddb35bce5796f7d997b68c4ee7d76/Youtube-Data-ETL-project/s3_cli_command.sh)
 * Used Crawler in AWS Glue Catalog to crawl the data from JSON and CSV files from the raw bucket and store them in separate database which then could be queried in Athena.
 * If problems arise as a result of data in JSON format, wrote a Python function using AWS Lambda to clean them up and convert them to parquet format.
 > lambda_function.py
@@ -36,3 +36,7 @@
  ## :jigsaw: Resouces:
 [Kaggle](https://www.kaggle.com/)
 [YouTube Data Analysis | END TO END DATA ENGINEERING PROJECT](https://www.youtube.com/playlist?list=PLBJe2dFI4sguF2nU6Z3Od7BX8eALZN3mU)
+
+
+
+### Give a 🌟 if you liked this project 
