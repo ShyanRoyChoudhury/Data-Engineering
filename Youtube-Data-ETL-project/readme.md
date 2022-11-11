@@ -28,6 +28,8 @@
 * Created another Glue Crawler to crawl the clean data into the clean_database.
 * After all the clean parquet files are converted from CSV and JSON files, they is present in the same database, did an ETL job using AWS Glue Studio to join both the tables and store it in a separate S3 bucket intended to use for Analytics purposes.
 > joining-script.py
+
+
 ![ETL-Joining_Data](https://user-images.githubusercontent.com/83347717/201347694-fa0b8a3a-4ea5-4baf-b443-43d573beb289.png)
 
 * The data is now ready! 👍:
