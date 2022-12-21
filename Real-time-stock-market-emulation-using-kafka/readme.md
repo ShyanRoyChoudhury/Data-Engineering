@@ -37,6 +37,7 @@ GG.
 
 ## :jigsaw: Resouces:
 [Kaggle](https://www.kaggle.com/)
+
 [Stock Market Real-Time Data Analysis Using Kafka](https://www.youtube.com/watch?v=KerNf0NANMo&t=1s)
 
 ### Give a 🌟 if you liked this project 
