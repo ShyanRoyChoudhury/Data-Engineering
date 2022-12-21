@@ -5,16 +5,20 @@ In this very exciting project, I have created a model to emulate a toned down ve
 * [S&P 500 Stocks (daily updated)](https://www.kaggle.com/datasets/andrewmvd/sp-500-stocks)
 
 ## 🔧:Technologies used:
+* AWS EC2
 * AWS S3
 * AWS Athena
 * AWS Glue Crawler
+* AWS IAM
 * Kafka
 * Google Colab
 
 ## 🏗️:Project Architecture:
 
 ## ☢️: Project Steps:
-
+* Downloaded the datasets from kaggle.
+* Create a t2-micro(free-tier) linux instance on AWS EC2. Create a keygen pair(.ppk file) and save in local machine. Then connect to cloud instance from local machine using Putty.
+* 
 
 ## :jigsaw: Resouces:
 [Kaggle](https://www.kaggle.com/)
